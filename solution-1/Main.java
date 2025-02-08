@@ -9,7 +9,7 @@ public class Main {
             return 1;
         }
 
-        int maxUniqueSnowflakes = 0;
+        int maxUniqueSnowflakes = 1;
         TreeSet<Integer> uniqueSnowflakes = new TreeSet<Integer>();
         for (int snowflake : snowflakes) {
             if (!uniqueSnowflakes.contains(snowflake)) {
