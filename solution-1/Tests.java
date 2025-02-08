@@ -1,5 +1,4 @@
-class Main {
-
+public class Tests {
     public static void printArray(int[] arr) {
         System.out.print("[ ");
         for (int i = 0; i < arr.length; i++) {
@@ -21,7 +20,7 @@ class Main {
         };
 
         for (TestCase testCase : testCases) {
-            Solution solution = new Solution(testCase.n, testCase.snowflakes, testCase.maxUniqueSnowflakes);
+            Solution solution = new Solution(testCase.n, testCase.snowflakes);
             int result = solution.solve();
             if (result != testCase.maxUniqueSnowflakes) {
                 System.out.print("Test case failed: ");
@@ -29,6 +28,9 @@ class Main {
                 System.out.println("Expected: " + testCase.maxUniqueSnowflakes);
                 System.out.println("Actual: " + result);
                 System.out.println();
+            } else {
+                System.out.print("Test case passed: ");
+                printArray(testCase.snowflakes);
             }
         }
     }

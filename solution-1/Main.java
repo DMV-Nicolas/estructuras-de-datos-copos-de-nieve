@@ -1,16 +1,8 @@
+import java.util.Scanner;
 import java.util.TreeSet;
 
-public class Solution {
-    int n;
-    int[] snowflakes;
-    int maxUniqueSnowflakes;
-
-    public Solution(int n, int[] snowflakes) {
-        this.n = n;
-        this.snowflakes = snowflakes;
-    }
-
-    public int solve() {
+public class Main {
+    public static int solve(int n, int[] snowflakes) {
         if (n == 0) {
             return 0;
         } else if (n == 1) {
@@ -31,5 +23,25 @@ public class Solution {
         maxUniqueSnowflakes = Math.max(maxUniqueSnowflakes, uniqueSnowflakes.size());
 
         return maxUniqueSnowflakes;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int cases = scanner.nextInt();
+
+        while (cases-- > 0) {
+            int n = scanner.nextInt();
+            int[] snowFlakes = new int[n];
+
+            for (int i = 0; i < n; i++) {
+                snowFlakes[i] = scanner.nextInt();
+            }
+
+            int result = solve(n, snowFlakes);
+
+            System.out.println(result);
+        }
+
+        scanner.close();
     }
 }
